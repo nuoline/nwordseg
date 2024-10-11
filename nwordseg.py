@@ -42,8 +42,8 @@ def segment(query):
     return basic_words
 
 if __name__ == "__main__":
-    root = sys.argv[1]
-    qfile = sys.argv[2] 
+    root = "nseg_model/nseg.model"
+    qfile = sys.argv[1]
     #init
     init(root)
     
