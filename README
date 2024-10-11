@@ -1,5 +1,5 @@
 1.介绍
-一个基于CRF+LLM的中文分词工具，C++实现，支持python接口，CRF模型是基于CRF++的优化版本NCRF实现，NCRF参考:https://github.com/nuoline/ncr, LLM主要用于构建高质量的分词样本.
+一个基于CRF+LLM的中文分词工具，C++实现，支持python接口，CRF模型是基于CRF++的优化版本NCRF实现，NCRF参考:https://github.com/nuoline/ncrf, LLM主要用于构建高质量的分词样本.
 
 2.使用
 nwordseg依赖ncrfpp，当前版本已包括编译好的依赖库，见ncrfpp
@@ -8,7 +8,7 @@ C++接口使用参考demo目录，python使用参考nwordseg.py
 
 3.重新构建
 3.1 ncrfpp构建
-如果需要重新构建ncrfpp依赖库，可参考https://github.com/nuoline/ncrf来构建
+如果需要重新构建ncrfpp依赖库，可参考https://github.com/nuoline/ncrf
 3.2 nseg编译
 可创建build目录来进行构建,参考命令:
 mkdir build
