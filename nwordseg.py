@@ -2,18 +2,16 @@
 # -*- coding: utf-8 -*
 
 """
-File: duer_wordseg.py
-Author: zhaizhouwei@baidu.com
+File: nwordseg.py
+Author: nuoline@gmail.com
 Date: 2019/11/21 16:03:39
 """
 
 import sys
-import os
-os.environ['LD_LIBRARY_PATH'] = './ncrfpp/lib:' + os.environ.get('LD_LIBRARY_PATH', '')
 import string
 import ctypes
 
-SEG_PY_SO_PATH = "./nseg_model/libnseg.so"
+SEG_PY_SO_PATH = "./nseg_model/lib/libnseg.so"
 STRING_BUFFER_SIZE = 2048
 
 cstr_basic_res = ctypes.create_string_buffer(STRING_BUFFER_SIZE)
@@ -49,10 +47,10 @@ if __name__ == "__main__":
     
     for line in open(qfile, 'r'):
         query = line.strip()
-        basic_words= segment(query)
+        seg_words= segment(query)
 
-        basic_words_str = " ".join(basic_words)
-        print '\t'.join([query, basic_words_str])
+        seg_words_str = " ".join(seg_words)
+        print '\t'.join([query, seg_words_str])
 
     #destroy
     destroy()
