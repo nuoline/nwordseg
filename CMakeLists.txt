@@ -26,8 +26,16 @@ set_target_properties(nseg PROPERTIES
     BUILD_WITH_INSTALL_RPATH TRUE
 )
 
+# 添加可执行文件
+add_executable(nseg_demo demo/seg_demo.cpp)
+# 链接nseg库到demo可执行文件
+target_link_libraries(nseg_demo nseg)
+
 # 指定输出目录
 set_target_properties(nseg PROPERTIES
-    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/nseg_model/bin
-    LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/nseg_model/lib
+    LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/nseg_model/lib"
+)
+
+set_target_properties(nseg_demo PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/nseg_model/bin"
 )
